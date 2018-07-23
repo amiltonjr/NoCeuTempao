@@ -25,7 +25,7 @@ Aceita comandos do tipo:
 
 // Define os dados da rede WiFi
 String ssid = "Comandante";
-String pass = "bosta123";
+String pass = "1234";
 
 // Respostas dos comandos do ESP8266
 #define EXECUTADO "10"
