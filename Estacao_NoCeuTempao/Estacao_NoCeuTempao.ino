@@ -87,7 +87,7 @@ byte grau[8] ={ B00001100,
 // Inicializa o sensor
 DHT dht(DHTPIN, DHTTYPE);
 
-/////////////////////////////////////////
+////////////////////////////////////////
 
 // Função que envia dados ao ESP8266
 String sendData(String command, const int timeout, boolean debug) {
