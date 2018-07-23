@@ -38,7 +38,7 @@ Lista de comandos disponíveis no formato (comando:valor):
 
 // Variáveis da rede sem fio
 String ssid = "Comandante";
-String pass = "bosta123";
+String pass = "1234";
 String IP = "";
 int porta = 80;
 
