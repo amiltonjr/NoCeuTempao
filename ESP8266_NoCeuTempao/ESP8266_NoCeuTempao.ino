@@ -56,7 +56,7 @@ bool status = false;
 #define TEMPOESGOTADO "-2"
 #define INVALIDO "-3"
 
-/////////////////////////////////////
+////////////////////////////////////
 
 // Define a porta do servidor
 WiFiServer server(porta);
