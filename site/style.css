@@ -1,0 +1,203 @@
+#layout{
+	width: 1024px;
+	height: 560px;
+	display: block;
+    margin: auto;
+
+	 /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(left top, white, #E0E0E0, #C0C0C0, #FFFF99, #FFCC99, #003366); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(bottom right, white, #E0E0E0, #C0C0C0, #FFFF99, #FFCC99, #003366); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(bottom right, white, #E0E0E0, #C0C0C0, #FFFF99, #FFCC99, #003366); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, white, #E0E0E0, #C0C0C0, #FFFF99, #FFCC99, #003366); /* Standard syntax */
+  	border-radius: 6px;
+
+}
+
+#caixaEsq{
+	margin-left: 12px;
+	width: 275px;
+	float: left;
+	background-color: none;
+
+}
+
+#ContentEsq{
+	margin-top: -7px;
+	color:black;
+	font-family: tahoma;
+	font-size: 20pt;
+	text-align: center;
+	height: 67px;
+	background-color: #104E8B; 
+  	opacity: 0.9;
+
+
+}
+
+#momento{
+	font-size:20pt;
+	font-weight: bold;
+	color: #FFF;
+}
+
+
+#ContentLocal{
+	font-family: tahoma;
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+	padding: 1px;
+	color: #F0FFFF;
+	height: 70px;
+	background-color:#4A708B;
+  
+  	opacity: 0.6;
+
+}
+
+#ContentTem{
+	margin-top:11px;
+	height: 175px;
+	padding: 5px; 
+	text-align: center;
+	color: white;
+	background-color: #4A708B;
+  	opacity: 0.72;
+}
+
+#ContentUmi{
+	height: 175px;
+	padding: 5px;
+	text-align: center;
+	color: white;
+	background-color: #4A708B;
+  	opacity: 0.72;
+
+}
+
+#caixaMeioT{
+	margin-top: 20px;
+	margin-left: 13px;
+	width: 450px;
+	height: 250px;
+	float: left;
+	background-color: white;
+	opacity: 0.7;
+	text-align: center;
+}
+
+#caixaMeioU{
+	margin-top: 20px;
+	margin-left: 13px;
+	width: 450px;
+	height: 250px;
+	float: left;
+	background-color: white;
+	opacity: 0.7;
+	text-align: center;
+}
+
+.titGraf{
+	font-family: arial;
+	font-weight: bold;
+	font-size:12pt;
+	margin-top: 13px;
+	margin-bottom: 8px;
+}
+
+#caixaDirCima{
+	padding-top: 70px;
+	margin-top: -250px;
+	margin-right: 12px;
+	color:white; 
+	width: 250px;
+	height: 180px;
+	float: right;
+	background-color:#4A708B;
+}
+
+#data{
+	font-family: tahoma;
+	font-size: 10pt;
+	color: white;
+	text-align: center;
+}
+
+#hora{
+	font-family: arial;
+	font-size: 52pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+#caixaDirBaixo{
+	padding-top: 20px;
+	margin-top: 20px;
+	margin-right: 12px;
+	color:white; 
+	width: 250px;
+	height: 230px;
+	float: right;
+	background-color:#4A708B;
+
+}
+
+#FormBuscaIntervalo{
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	font-family: tahoma;
+}
+
+.rotulo{
+	opacity: 0.9;
+	font-weight: bold;
+}
+
+.campo{
+	color:black;
+	font-family: arial;
+	padding: 3px;
+	border: transparent;
+	border-radius: 2px;
+}
+
+#BotaoSearch{
+	background-color: #C0C0C0;
+	padding: 7px 5px 7px 5px;
+   	text-align: center;  
+   	border-radius: 2px;
+   	font-size: 13pt;
+   	width: 90px;
+	font-weight: bold;
+	font-family: tahoma;	
+}
+
+#info
+{
+	font-family: verdana;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+}
+
+.titulo{
+	font-family: arial;
+	font-size: 20pt;
+	color: black;
+	font-weight: bold;
+}
+
+.valor{
+	font-family: verdana;
+	font-size: 45pt;
+}
+
+
+/*
+.rot{
+	font-family: arial;
+	text-align:center;
+}
+*/

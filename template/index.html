@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+	<head>
+		<title>NO CÉU TEMPÃO</title>
+		<link rel="icon" type="image/jpg" href="logo.jpg"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8" author="Amilton Fontoura de Camargo Junior, Carlos Henrique dos Santos e Tiago Pagotto" description="Trabalho de estação meteorológica ministrado na disciplina de Oficina de Integração 2">
+		
+		<!-- AUTO REFRESH DA PAGINA
+		<meta http-equiv="refresh" content="5">
+		-->
+		<script src="Chart.min.js"></script>
+
+		
+	</head>
+	
+	<body>
+		<div id="layout">
+
+			<div id="caixaEsq">
+				<div id="ContentEsq">
+					<p id="momento">TEMPO NO MOMENTO EM:</p>
+				</div>	
+				<div id="ContentLocal">
+					<p>Cornélio Procópio</p>
+				</div>
+				<div id="ContentTem">
+					<p class="titulo">Temperatura:</p>
+					<h1 class="valor"> 30º C </h1>
+				</div>
+				<div id="ContentUmi">
+					<P class="titulo"> Umidade:</P>
+					<h1 class="valor"> 50 % </h1>
+				</div>
+			</div>
+
+			<div id="caixaMeioT">
+				<h6 class="titGraf">Gráfico da temperatura nos últimos 30 dias:</h6>
+				<canvas id="grafico" height="200" width="400"></canvas>
+			</div>
+
+			<div id="caixaMeioU">
+				<h6 class="titGraf">Gráfico da umidade nos últimos 30 dias:</h6>
+				<canvas id="grafico2" height="200" width="400"></canvas>
+			</div>	
+			
+			<div id="caixaDirCima">
+				<div id="hora">
+					<SPAN ID="Clock">00:00</SPAN>
+					<SCRIPT LANGUAGE="JavaScript">
+					    var Elem = document.getElementById("Clock");
+					    function Horario(){ 
+					    var Hoje = new Date(); 
+					    var Horas = Hoje.getHours(); 
+					    if(Horas < 10){ 
+					      Horas = "0"+Horas; 
+					    } 
+					    var Minutos = Hoje.getMinutes(); 
+					    if(Minutos < 10){ 
+					      Minutos = "0"+Minutos; 
+					    } 
+					    var Segundos = Hoje.getSeconds(); 
+					    if(Segundos < 10){ 
+					      Segundos = "0"+Segundos; 
+					    } 
+					    Elem.innerHTML = Horas+":"+Minutos; 
+					    } 
+					   window.setInterval("Horario()",1000);
+					</SCRIPT>
+				</div>
+
+					<div id="data">
+						<script type="text/javascript">
+							var mydate=new Date()
+							var year=mydate.getYear()
+							if (year<2000)
+							year += (year < 1900) ? 1900 : 0
+							var day=mydate.getDay()
+							var month=mydate.getMonth()
+							var daym=mydate.getDate()
+							if (daym<10)
+							daym="0"+daym
+							var dayarray=new Array("Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado")
+							var montharray=new Array(" de Janeiro de "," de Fevereiro de "," de Março de ","de Abril de ","de Maio de ","de Junho de","de 	Julho de ","de Agosto de ","de Setembro de "," de Outubro de "," de Novembro de "," de Dezembro de ")
+							document.write("   "+dayarray[day]+", "+daym+" "+montharray[month]+" "+year)
+						
+		
+						</script>
+					</div>
+
+				</div>
+					
+				<div id="caixaDirBaixo">
+					<form id="FormBuscaIntervalo" name="BuscarIntervalo" method= "GET" action="historico.html">
+						<fieldset>
+							<legend>BUSCA DE INTERVALO</legend>
+							<div class="LinhaForm">
+								<label class="rotulo" for="datai">Data inicial: </label>
+								<input class="campo" type ="date" name="dataInic" class="InputFields"></input>
+							</div>
+							<br>
+							<div class="LinhaForm">
+								<label class="rotulo" for="dataf">Data final: </label>
+								<input class="campo" type ="date" name="dataFim" class="InputFields"></input>
+							</div>
+							<br>
+							<button type="submit" id="BotaoSearch"> BUSCAR </button>
+						</fieldset>
+					</form>
+				</div>						
+
+		</div>	
+
+
+			<script>
+			var _ultimos30diasT = {
+					labels : ["13 Mai","14 Mai","15 Mai","16 Mai","17 Mai","18 Mai","19 Mai","20 Mai","21 Mai","22 Mai","23 Mai","24 Mai","25 Mai","26 Mai","27 Mai","28 Mai","29 Mai","30 Mai","31 Mai","1 Jun","2 Jun","3 Jun","4 Jun","5 Jun","6 Jun","7 Jun","8 Jun","9 Jun","10 Jun","11 Jun","12 Jun",],
+					datasets :
+					[
+						{
+							label: "TEMPERATURA",
+							fillColor : "rgba(255,99,71,0.01)",
+							strokeColor : "rgba(255,99,71,1)",
+							pointColor : "rgba(255,99,71,1)",
+							pointStrokeColor : "rgba(255,255,255,0)",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(255,99,71,1)",
+							data : [3.123,3.123,3.125,3.111,3.137,3.398,3.371,3.255,3.255,3.295,3.284,3.280,3.291,3.275,3.261,3.261,3.274,3.269,3.258,3.251,3.254,3.248,3.248,3.298,3.298,3.285,3.285,3.297,3.297,3.297,3.300,]
+						}
+					]
+				};
+
+				var _ultimos30diasU = {
+					labels : ["13 Mai","14 Mai","15 Mai","16 Mai","17 Mai","18 Mai","19 Mai","20 Mai","21 Mai","22 Mai","23 Mai","24 Mai","25 Mai","26 Mai","27 Mai","28 Mai","29 Mai","30 Mai","31 Mai","1 Jun","2 Jun","3 Jun","4 Jun","5 Jun","6 Jun","7 Jun","8 Jun","9 Jun","10 Jun","11 Jun","12 Jun",],
+					datasets :
+					[
+						{
+							label: "UMIDADE",
+							fillColor : "rgba(0,191,255,0.01)",
+							strokeColor : "rgba(0,191,255,1)",
+							pointColor : "rgba(0,191,255,1)",
+							pointStrokeColor : "rgba(255,255,255,0)",
+							pointHighlightFill : "#fff",
+							pointHighlightStroke : "rgba(0,191,255,1)",
+							data : [3.123,3.123,3.098,3.092,3.097,3.137,3.252,3.255,3.253,3.253,3.262,3.260,3.272,3.258,3.261,3.261,3.257,3.256,3.227,3.221,3.236,3.248,3.246,3.246,3.276,3.269,3.262,3.261,3.297,3.295,3.283,]
+						}
+					]
+				};
+
+			window.onload = function(){
+				var ctx = document.getElementById("grafico").getContext("2d");
+				window.myLine = new Chart(ctx).Line(_ultimos30diasT, {
+				responsive: false,
+				maintainAspectRatio: true,
+				scaleShowGridLines : true,
+				pointDot : true,
+				multiTooltipTemplate: "<%=datasetLabel%>: <%=value%>"
+				});
+
+			var dtx = document.getElementById("grafico2").getContext("2d");
+				window.myLine = new Chart(dtx).Line(_ultimos30diasU, {
+				responsive: false,
+				maintainAspectRatio: true,
+				scaleShowGridLines : true,
+				pointDot : true,
+				multiTooltipTemplate: "<%=datasetLabel%>: <%=value%>"
+				});
+
+			}
+			
+			</script>
+	</body>
+
+	<footer>
+		<p id= "info"> © NO CÉU TEMPÃO<br>
+				Trabalho ministrado na disciplina de Oficina de Integração 2 
+		</p>
+	</footer>
+
+</html>
